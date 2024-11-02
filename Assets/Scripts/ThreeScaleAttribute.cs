@@ -2,13 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Used when an attribute has three related states.
+/// For example: if something should be big, medium, or small
+/// </summary>
 [CreateAssetMenu(fileName = "3Scale Attribute", menuName = "CoffeeAttributes/Three Scale", order = 1)]
 [Serializable]public class ThreeScaleAttribute : ScriptableObject
 {
-    [SerializeField] protected Scale3Vals myVal;
+    protected Scale3Vals myVal;
     bool incorrect = true;
 
-    //change this
     public List<string> xLowComplain = new List<string>();
     public List<string> lowComplain = new List<string>();
     public List<string> highComplain = new List<string>();
@@ -42,6 +45,10 @@ using UnityEngine;
         return incorrect;
     }
 
+    /// <summary>
+    /// edit this function to change where the complaint is outputted
+    /// </summary>
+    /// <param name="complaintPool"></param>
     public void Complain(List<string> complaintPool)
     {
         Debug.Log(complaintPool[UnityEngine.Random.Range(0, complaintPool.Count)]);
