@@ -19,9 +19,9 @@ public enum Scale3Vals
 
 public class Dialogic:MonoBehaviour
 {
-    public ThreeScale temperature;
-    public ThreeScale size;
-    public ThreeScale strength;
+    public ThreeScaleAttribute temperature;
+    public ThreeScaleAttribute size;
+    public ThreeScaleAttribute strength;
 
     public Scale3Vals selectedTemperature;
     public Scale3Vals selectedSize;
