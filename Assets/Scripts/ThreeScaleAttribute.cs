@@ -1,28 +1,18 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 
-public class ThreeScale : MonoBehaviour
+[CreateAssetMenu(fileName = "3Scale Attribute", menuName = "CoffeeAttributes/Three Scale", order = 1)]
+[Serializable]public class ThreeScaleAttribute : ScriptableObject
 {
-    [SerializeField]protected Scale3Vals myVal;
+    [SerializeField] protected Scale3Vals myVal;
     bool incorrect = true;
 
     //change this
-    public List<string> xLowComplain  = new List<string>();
-    public List<string> lowComplain  = new List<string>();
+    public List<string> xLowComplain = new List<string>();
+    public List<string> lowComplain = new List<string>();
     public List<string> highComplain = new List<string>();
     public List<string> xHighComplain = new List<string>();
-
-    // Use this for initialization
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
 
     public void SetValue(Scale3Vals newVal)
     {
@@ -32,16 +22,19 @@ public class ThreeScale : MonoBehaviour
     public bool CompareAttribute(Scale3Vals compareVal)
     {
         incorrect = false;
-        if(myVal == compareVal + 2)
+        if (myVal == compareVal + 2)
         {
             Complain(xLowComplain);
-        }else if(myVal == compareVal + 1)
+        }
+        else if (myVal == compareVal + 1)
         {
             Complain(lowComplain);
-        }else if(myVal == compareVal - 1)
+        }
+        else if (myVal == compareVal - 1)
         {
             Complain(highComplain);
-        }else if(myVal == compareVal - 2)
+        }
+        else if (myVal == compareVal - 2)
         {
             Complain(xHighComplain);
         }
@@ -51,7 +44,7 @@ public class ThreeScale : MonoBehaviour
 
     public void Complain(List<string> complaintPool)
     {
-        Debug.Log(complaintPool[Random.Range(0, complaintPool.Count)]);
+        Debug.Log(complaintPool[UnityEngine.Random.Range(0, complaintPool.Count)]);
         incorrect = true;
     }
 }
