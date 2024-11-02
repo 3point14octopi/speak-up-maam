@@ -11,6 +11,14 @@ public enum Scale3Vals
     HIGH = 2
 }
 
+public enum Flavours
+{
+    NONE     = 0,
+    PSPICE   = 1,
+    CARAMEL  = 2,
+    HAZELNUT = 3,
+    VANILLA  = 4
+}
 
 
 
@@ -22,10 +30,12 @@ public class Dialogic:MonoBehaviour
     public ThreeScaleAttribute temperature;
     public ThreeScaleAttribute size;
     public ThreeScaleAttribute strength;
+    public UnlinkedAttribute   flavour;
 
     public Scale3Vals selectedTemperature;
     public Scale3Vals selectedSize;
     public Scale3Vals selectedStrength;
+    public Flavours selectedFlavour;
 
 
 
@@ -51,6 +61,7 @@ public class Dialogic:MonoBehaviour
         wrong = (temperature.CompareAttribute(selectedTemperature))?true:wrong;
         wrong = (size.CompareAttribute(selectedSize))?true:wrong;
         wrong = (strength.CompareAttribute(selectedStrength))?true:wrong;
+        wrong = (flavour.CompareAttribute(selectedFlavour)) ? true : wrong;
 
         if (!wrong)
         {
@@ -64,11 +75,13 @@ public class Dialogic:MonoBehaviour
         temperature.SetValue((Scale3Vals)Random.Range(0, 3));
         size.SetValue((Scale3Vals)Random.Range(0, 3));
         strength.SetValue((Scale3Vals)Random.Range(0, 3));
+        flavour.SetValue((Flavours)Random.Range(0, flavour.complaints.Count));
 
         if (!shuffleAll) return;
 
         selectedTemperature = (Scale3Vals)Random.Range(0, 3);
         selectedSize = (Scale3Vals)Random.Range(0, 3);
         selectedStrength = (Scale3Vals)Random.Range(0, 3);
+        selectedFlavour = Flavours.NONE;
     }
 }
