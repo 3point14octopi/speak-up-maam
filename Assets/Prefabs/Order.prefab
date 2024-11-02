@@ -48,7 +48,7 @@ MonoBehaviour:
   size: {fileID: 11400000, guid: ec82fdfc7c0ac6c44a6497e4b2948c10, type: 2}
   strength: {fileID: 11400000, guid: 7de1aa92165fc4f4aa7277ff65f42ed0, type: 2}
   flavour: {fileID: 11400000, guid: d1586bbe091c2ea43afb8ff6faa2890e, type: 2}
-  selectedTemperature: 0
-  selectedSize: 0
-  selectedStrength: 0
+  selectedTemperature: -1
+  selectedSize: -1
+  selectedStrength: -1
   selectedFlavour: 0

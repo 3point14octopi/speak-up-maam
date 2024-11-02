@@ -6,9 +6,10 @@ using UnityEngine;
 
 public enum Scale3Vals
 {
-    LOW = 0,
-    MID = 1,
-    HIGH = 2
+    NULL = -1,
+    LOW  =  0,
+    MID  =  1,
+    HIGH =  2
 }
 
 public enum Flavours
@@ -27,10 +28,10 @@ public enum Flavours
 
 public class Dialogic:MonoBehaviour
 {
-    public ThreeScaleAttribute temperature;
-    public ThreeScaleAttribute size;
-    public ThreeScaleAttribute strength;
-    public UnlinkedAttribute   flavour;
+    [SerializeField] ThreeScaleAttribute temperature;
+    [SerializeField] ThreeScaleAttribute size;
+    [SerializeField] ThreeScaleAttribute strength;
+    [SerializeField] UnlinkedAttribute   flavour;
 
     public Scale3Vals selectedTemperature;
     public Scale3Vals selectedSize;
@@ -42,7 +43,7 @@ public class Dialogic:MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Shuffle(true);
+        Shuffle();
     }
 
     // Update is called once per frame
@@ -56,6 +57,13 @@ public class Dialogic:MonoBehaviour
 
     public void Check()
     {
+        if(selectedSize == Scale3Vals.NULL || selectedTemperature == Scale3Vals.NULL || selectedStrength == Scale3Vals.NULL)
+        {
+            Debug.Log("incomplete order!");
+            WipeCurrentCoffee();
+            return;
+        }
+
         bool wrong = false;
 
         wrong = (temperature.CompareAttribute(selectedTemperature))?true:wrong;
@@ -68,6 +76,10 @@ public class Dialogic:MonoBehaviour
             Debug.Log("u dids it");
             Shuffle();
         }
+        else
+        {
+            WipeCurrentCoffee();
+        }
     }
 
     void Shuffle(bool shuffleAll = false)
@@ -76,12 +88,15 @@ public class Dialogic:MonoBehaviour
         size.SetValue((Scale3Vals)Random.Range(0, 3));
         strength.SetValue((Scale3Vals)Random.Range(0, 3));
         flavour.SetValue((Flavours)Random.Range(0, flavour.complaints.Count));
+        
+        WipeCurrentCoffee();
+    }
 
-        if (!shuffleAll) return;
-
-        selectedTemperature = (Scale3Vals)Random.Range(0, 3);
-        selectedSize = (Scale3Vals)Random.Range(0, 3);
-        selectedStrength = (Scale3Vals)Random.Range(0, 3);
-        selectedFlavour = Flavours.NONE;
+    void WipeCurrentCoffee()
+    {
+        selectedTemperature = Scale3Vals.NULL;
+        selectedSize        = Scale3Vals.NULL;
+        selectedStrength    = Scale3Vals.NULL;
+        selectedFlavour     = Flavours.NONE;
     }
 }
