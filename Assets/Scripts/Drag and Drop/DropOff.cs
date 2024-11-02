@@ -1,18 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
-public class DropOff : MonoBehaviour
+public class DropOff : MonoBehaviour, IDropHandler
 {
-    // Start is called before the first frame update
-    void Start()
+    public void OnDrop(PointerEventData evemtData)
     {
-        
+        GameObject item = evemtData.pointerDrag;
+        item.GetComponent<Pickup>().parentAfterDrag = transform;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
