@@ -6,10 +6,16 @@ using UnityEngine.EventSystems;
 
 public class DropOff : MonoBehaviour, IDropHandler
 {
-    public void OnDrop(PointerEventData evemtData)
+    public void OnDrop(PointerEventData eventData)
     {
-        GameObject item = evemtData.pointerDrag;
-        item.GetComponent<Pickup>().parentAfterDrag = transform;
+        Debug.Log("dropoff");
+        GameObject item = eventData.pointerDrag;
+        Debug.Log(item.tag);
+        if (item.tag == "Cup")
+        {
+            item.GetComponent<Pickup>().hidden = false;
+            item.GetComponent<Pickup>().parentAfterDrag = transform;
+        }
     }
 
 }

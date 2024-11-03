@@ -10,7 +10,9 @@ public class Pickup : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHa
     // Start is called before the first frame update
     // IPointerEnterHandler, IPointerExitHandler,, IDropHandler
     private Image image;
-    public Transform parentAfterDrag;
+    public Transform parentAfterDrag; 
+    public GameObject hiddenSpot; //used to hide the coffee cup off screen
+    public bool hidden = true;
     void Start()
     {
         image = gameObject.GetComponent<Image>();
@@ -20,6 +22,13 @@ public class Pickup : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHa
     void Update()
     {
         
+    }
+
+    public void HideCup()
+    {
+        transform.SetParent(hiddenSpot.transform);
+        hidden = true;
+        parentAfterDrag = null;
     }
 
     public void OnBeginDrag(PointerEventData evemtData)

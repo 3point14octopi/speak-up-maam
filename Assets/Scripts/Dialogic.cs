@@ -92,7 +92,7 @@ public class Dialogic:MonoBehaviour
         WipeCurrentCoffee();
     }
 
-    void WipeCurrentCoffee()
+    public void WipeCurrentCoffee()
     {
         selectedTemperature = Scale3Vals.NULL;
         selectedSize        = Scale3Vals.NULL;
