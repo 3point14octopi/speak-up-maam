@@ -9,16 +9,16 @@ public class MachineDropSpot : MonoBehaviour, IDropHandler
 {
     public GameObject cup;
     public Slider slider;
+    public GameObject nozzle;
+    public AnimationClip[] nozzleAnims;
 
 
     public void OnDrop(PointerEventData eventData)
     {
 
         GameObject item = eventData.pointerDrag;
-        Debug.Log(item.tag);
         if (item.tag == "Stack")
         {
-            Debug.Log("machine dropoff");
             item.GetComponent<CupSelect>().cup.GetComponent<Pickup>().hidden = false;
             item.GetComponent<CupSelect>().cup.GetComponent<Pickup>().parentAfterDrag = transform;
         }
@@ -29,5 +29,7 @@ public class MachineDropSpot : MonoBehaviour, IDropHandler
         cup.GetComponent<Dialogic>().selectedStrength = caffiene;
         cup.GetComponent<Dialogic>().selectedTemperature = (Scale3Vals) slider.value;
         cup.GetComponent<CupSpriteHandler>().FillSprite();
+        nozzle.transform.SetAsLastSibling();
+        nozzle.GetComponent<Animator>().Play(nozzleAnims[(int)cup.GetComponent<Dialogic>().selectedSize].name);
     }
 }
