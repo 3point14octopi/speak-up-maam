@@ -5,13 +5,13 @@ using UnityEngine.EventSystems;
 
 public class CoffeeMachineButton : MonoBehaviour, IPointerClickHandler
 {
-    public int strength;
+    public Scale3Vals strength;
     public GameObject coffeeMachine;
     public Animator anim;
     public AnimationClip pressAnimation;
     public void OnPointerClick(PointerEventData eventData)
     {
-        //coffeeMachine.GetComponent<CoffeeMachine>().SetStrength(strength);
+        coffeeMachine.GetComponent<MachineDropSpot>().PourCoffee(strength);
         anim.Play(pressAnimation.name);
     }
 }

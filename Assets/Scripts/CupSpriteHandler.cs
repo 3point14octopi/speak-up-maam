@@ -41,4 +41,9 @@ public class CupSpriteHandler : MonoBehaviour
             closedCup = TallCups[1];
         }
     }
+
+    public void FillSprite()
+    {
+        image.sprite = closedCup;
+    }
 }
