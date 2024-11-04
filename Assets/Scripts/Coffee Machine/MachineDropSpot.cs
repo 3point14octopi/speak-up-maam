@@ -28,8 +28,10 @@ public class MachineDropSpot : MonoBehaviour, IDropHandler
     {
         cup.GetComponent<Dialogic>().selectedStrength = caffiene;
         cup.GetComponent<Dialogic>().selectedTemperature = (Scale3Vals) slider.value;
+        cup.GetComponent<Dialogic>().progress = 2;
         cup.GetComponent<CupSpriteHandler>().FillSprite();
         nozzle.transform.SetAsLastSibling();
         nozzle.GetComponent<Animator>().Play(nozzleAnims[(int)cup.GetComponent<Dialogic>().selectedSize].name);
+        gameObject.GetComponent<AudioSource>().Play(0);
     }
 }
