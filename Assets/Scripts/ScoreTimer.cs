@@ -14,13 +14,17 @@ public class ScoreTimer : MonoBehaviour
     private bool gameOver = false;
     public GameObject winPanel;
     public TextMeshProUGUI finalScore;
+    public bool isEndless;
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (timer < 0 && !gameOver) GameOver();
-        timer -= Time.deltaTime;
-        UpdateTimer(timer);
+        if (!isEndless)
+        {
+            if (timer < 0 && !gameOver) GameOver();
+            timer -= Time.deltaTime;
+            UpdateTimer(timer);
+        }
 
     }
     public void UpdateTimer(float a)
@@ -49,5 +53,15 @@ public class ScoreTimer : MonoBehaviour
         timer = 300;
         winPanel.SetActive(false);
         SceneManager.LoadScene("Main Menu");
+    }
+
+    public void OpenEndlessMenu()
+    {
+        winPanel.SetActive(true);
+        finalScore.text = "" + score;
+    }
+    public void CloseEndlessMenu()
+    {
+        winPanel.SetActive(false);
     }
 }

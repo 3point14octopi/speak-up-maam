@@ -1648,7 +1648,7 @@ MonoBehaviour:
   fontButton: {fileID: 379192185}
   quitButton: {fileID: 2044387601}
   exitFontPanel: {fileID: 112852060}
-  Endless: 
+  Endless: Endless Coffee
   Timed: Coffee Shop
   licenseText: {fileID: 585986502}
   licenseSections:
