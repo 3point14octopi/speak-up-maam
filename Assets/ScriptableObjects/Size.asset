@@ -12,12 +12,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 861722506d999994898ec1f34219bfdd, type: 3}
   m_Name: Size
   m_EditorClassIdentifier: 
-  myVal: 0
+  speechBubble: {fileID: 0}
   xLowComplain:
-  - way too small
+  - They say size doesn't matter, but... it kind of does.
+  - I want this coffee like your forehead!
+  - This coffee reminds me of the Grinch's heart. It should take a hint.
   lowComplain:
-  - too small
+  - Hey, I'm not a child!
+  - This serving is a little stingy...
+  - Please sir, I want some more :(
   highComplain:
-  - too big
+  - You know, I think this coffee could afford to have a bit more personality instead
+  - Uh... I'm on a diet...
+  - This leaves a lot to be desired, but portion size isn't exactly one of them...
   xHighComplain:
-  - way too big
+  - Are you compensating for something?
+  - I asked for a drink, not a caffeinated swimming pool!
+  - I'm just soooo small and petite, I can't drink all THAT!

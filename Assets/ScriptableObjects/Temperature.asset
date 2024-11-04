@@ -12,14 +12,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 861722506d999994898ec1f34219bfdd, type: 3}
   m_Name: Temperature
   m_EditorClassIdentifier: 
-  myVal: 2
+  speechBubble: {fileID: 0}
   xLowComplain:
   - Hey buddy, leave the "frosted" to flakes and cupcakes, okay?
   - Not too bad... if you were born in a snowbank and raised by freakin' penguins!
   - Um... can I get some coffee with this ice?
   lowComplain:
-  - too cold
+  - 'Do you know how cold it is outside? '
+  - Not to be my thermostat-fixated son, but can you turn up the heat a little?
+  - I'm already cool enough for my coffee.
   highComplain:
-  - too hot
+  - I wish you'd chill out, but I'd settle for this coffee...
+  - 'This coffee is like a lousy bus seat: uncomfortably warm'
+  - Can I get some ice cubes in this?
   xHighComplain:
-  - way too hot
+  - How am I supposed to be the hottest thing in the room if this stupid coffee is
+    here?
+  - I'm gonna McDonald's sue you!
+  - I fink I burn my ptongue!

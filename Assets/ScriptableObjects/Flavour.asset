@@ -12,14 +12,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbecd5892e3d7cc48bea5ef16c181bf8, type: 3}
   m_Name: Flavour
   m_EditorClassIdentifier: 
+  speechBubble: {fileID: 0}
   complaints:
   - cList:
-    - i don't want flavour
+    - I hate fun.
+    - Is this even coffee anymore? It just tastes like candy.
+    - Can we stick to the classics? No frills needed.
   - cList:
-    - needs pumpkin
+    - 'Doesn''t taste "pie" enough. '
+    - How am I supposed to celebrate Christian Girl Autumn with THIS flavour?
+    - I need some more spice in my life.
   - cList:
-    - needs caramel
+    - Every morning I wake up and go "Man, I wish I could dip apples in my coffee"
+    - I want to have a long and pointless argument about the way to pronounce the
+      flavour of my coffee
+    - 'This needs to be WAY sweeter. '
   - cList:
-    - needs to kill harry
+    - 'My millionaire father is allergic to nuts. I want that inheritance. '
+    - 'I like my coffee the way I like my women: a little nutty'
+    - Can I get a cup of Nutella but with coffee instead of chocolate?
   - cList:
-    - needs to be less kinky
+    - 'I wish this tasted a little more like ice cream. '
+    - 'I need more bean per bean. '
+    - Needs to be less kinky. Did I say that out loud?

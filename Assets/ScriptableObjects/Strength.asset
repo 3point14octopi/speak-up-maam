@@ -12,12 +12,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 861722506d999994898ec1f34219bfdd, type: 3}
   m_Name: Strength
   m_EditorClassIdentifier: 
-  myVal: 0
+  speechBubble: {fileID: 0}
   xLowComplain:
-  - way too weak
+  - This coffee couldn't wake an insomniac!
+  - Strong as water, with the same taste to boot!
+  - I have 5 essays due in 4 hours. Is this REALLY the best you can do?
   lowComplain:
-  - too weak
+  - I'm gonna need a little more of a pick-me-up
+  - 'I think this coffee needs a gym membership. '
+  - The youth of today aren't the only things in this room that need a bit more kick...
   highComplain:
-  - too strong
+  - Thanks, I wasn't feeling twitchy enough today but this really did the trick!
+  - Ugh, I need to go to bed early, and this won't help...
+  - My doctor said to cut back on caffeine...
   xHighComplain:
-  - way too strong
+  - I'm not going to be able to sleep for a week!
+  - H-hey, is the room shaking, or is it j-j-just me?
+  - Thank you SO much! I DEFINITELY wanted to spend my morning in the bathroom!
