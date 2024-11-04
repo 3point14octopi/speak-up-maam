@@ -21,7 +21,8 @@ public class ScoreTimer : MonoBehaviour
     {
         float minutes = Mathf.FloorToInt(a / 60);
         float seconds = Mathf.FloorToInt(a % 60);
-        timerText.text = minutes + ":" + seconds;
+        if(seconds < 10) timerText.text = minutes + ":0" + seconds;
+        else timerText.text = minutes + ":" + seconds;
     }
     public void UpdateScore()
     {

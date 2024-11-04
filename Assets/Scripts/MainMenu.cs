@@ -47,7 +47,7 @@ public class MainMenu : MonoBehaviour
         licenseSection--;
         licenseText.text = licenseSections[licenseSection];
         scrollDown.SetActive(true);
-        if (licenseSection == 4) scrollUp.SetActive(false);
+        if (licenseSection == 0) scrollUp.SetActive(false);
     }
     public void ScrollDown()
     {
