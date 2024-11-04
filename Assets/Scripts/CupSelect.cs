@@ -19,6 +19,7 @@ public class CupSelect : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
         cup.transform.SetParent(transform.root); // becomes a child off the UI 
         cup.transform.SetAsLastSibling(); //becomes the last child this makes it so it is the closest to the camera and wont pass under things
         cup.GetComponent<Image>().raycastTarget = false; //no ray on drag
+        gameObject.GetComponent<AudioSource>().Play(0);
     }
 
     public void OnDrag(PointerEventData evemtData)
@@ -32,6 +33,7 @@ public class CupSelect : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
         if (cup.GetComponent<Pickup>().hidden == false) {
             cup.transform.SetParent(cup.GetComponent<Pickup>().parentAfterDrag);
             cup.GetComponent<Image>().raycastTarget = true; //no ray on drag
+            cup.GetComponent<Dialogic>().progress = 1;
         }
         else
         {

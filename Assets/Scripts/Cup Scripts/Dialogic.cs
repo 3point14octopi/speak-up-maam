@@ -41,6 +41,8 @@ public class Dialogic:MonoBehaviour
     public Flavours selectedFlavour;
     public GameObject customer;
     public GameObject score;
+    public int progress = 0;
+    
 
 
 
@@ -109,5 +111,6 @@ public class Dialogic:MonoBehaviour
         selectedSize        = Scale3Vals.NULL;
         selectedStrength    = Scale3Vals.NULL;
         selectedFlavour     = Flavours.NONE;
+        progress = 0;
     }
 }

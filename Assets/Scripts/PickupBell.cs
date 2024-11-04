@@ -15,5 +15,6 @@ public class PickupBell : MonoBehaviour, IPointerClickHandler
         cup.GetComponent<Dialogic>().Check();
         cup.GetComponent<Pickup>().HideCup();
         anim.Play(ring.name);
+        gameObject.GetComponent<AudioSource>().Play(0);
     }
 }

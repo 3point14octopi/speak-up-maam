@@ -13,6 +13,7 @@ public class GarbageBin : MonoBehaviour, IDropHandler
         {
             item.GetComponent<Pickup>().HideCup();
             item.GetComponent<Dialogic>().WipeCurrentCoffee();
+            gameObject.GetComponent<AudioSource>().Play(0);
         }
     }
 }
